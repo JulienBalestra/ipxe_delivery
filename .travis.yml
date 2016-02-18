@@ -20,5 +20,6 @@ deploy:
   local-dir: delivery
   upload-dir: archives
   acl: public_read
+  region: eu-west-1
   on:
     repo: JulienBalestra/ipxe_delivery

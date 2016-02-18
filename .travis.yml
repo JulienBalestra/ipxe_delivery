@@ -17,8 +17,8 @@ deploy:
   secret_access_key:
     secure: "D8D0lo+kkBMY60eST5jE1BlPuTn+xuvuVEwRBxfPiVoyFnRZruTfNVpfJi49ZMy0iqdkbLlflkjJQ6ZGGXRLEpBLCM69Ekr4D2ovwinVE6sj24k5klDMCdFBW88D45Hmpex6dKtnsIPdTM76zrQV0EpGDV2jzVOTWp9xeMhrxYRtmItIQzv9dd7RdUy34TdFlm1VMjarJKuySKAy+L4WQMUgQfu1Jfxj3SnD8GCMINFgdU6dWQxnOSLOu72LoO4WWAIE9AZFecp0DTM/2bQ/Dg2HphMoF+ryvUAOmlY98Bolob7BFgNA5bG2xPvfgRVjc5MLNW7A9LGGyGexvV3zK6EYUF50zQB6TgREOFfdoYJyEBGm+ajVlBbafBywXlCOr7KLmVnyuZ7mzK4IPGeY96GTyZtzLBOy+rJYarpIh32S/Qyyw1aE8P396bUFC2MiEw9GZLHQzVGUCWxGdQ8Jklx+vM4Il5D9NVOBbbEe9yvAH1Hl1x7N933pMg+2QEcFAUQz2oRZPXS+PXoOiW1f8z6qEqTJPuDpKGAJLLOwFmHqIlp69A2M56xfRJGEFRlv2X+Lh9H/ys45JPAv5ijZ/Fd5Nc87ZpX2+JgdsDun/cuLRAuGwPrbnMYRQmCofDZp395zbOrd+mdqxYzwRWmkW6l6O0M+WFlv1vftsmPAm9Q="
   bucket: ipxe-delivery
-  local-dir: delivery
-  upload-dir: archives
+  file: delivery/coreos_ipxe.tar.gz
+  upload-dir: delivery
   acl: public_read
   region: eu-west-1
   on:

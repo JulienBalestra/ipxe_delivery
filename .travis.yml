@@ -1,0 +1,23 @@
+os:
+  - linux
+
+sudo: required
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y liblzma-dev mkisofs
+
+script: "./coreos.sh"
+
+deploy:
+  provider: s3
+  access_key_id:
+    secure: "ZJtQfGX+TiY4x4o391l99mBEtrQcBYkMpBp2SjEPQQ7snpW0oXKDStq3Vunj6ATvljkzj50FuLaHvQ3e/zE7F5d/pR/MdvSGMYBwmQDwqyusl56ztQolUydG1+6GLSWi4qM0LDs+sz4TECFoUZ+yoiYej    +OUgoJyoN9N6j5+GQVcMFyIi3e5VOib0Xkn0tZhaHhpCIZ6eF3EorE6LzIKw+eKSLOA0AD9zTGbgnEZsFOvPvVBZq7q1tNoPIvgaRACwLcSUJ2lneRaFfXOA/UYtHv9UX49HZPUvILsf6qA3wbGFO3zOfuLfaDe2vFrV    RwSuqRMOA02ZVx47KZeCUxIq042ZIeuEn+Hzkdx94QPKhsb7lIL6Zk5viqUUsr29WntRUpTwnHlQ3jP7uwtQkH7QTRalpGfrxhS8dRJNn9wJtAUWcfG1A+9Bv1CN8rZKj3OKzMb7k5oydlCcidPV6QCL8ZixNPR94/Ig    GTehAMZlJXMAgXXLAJ2BPCzAkOr+eayPEnwgJp116r7f2kvHPCWL5Udm1LOFv5DGMIdlA+loMM0RIl9sPeIiq1kdqV0dDgMT888vljaUjf3YKhVCEUGbdPTaOmnWENsui8bnTFV3TNh73vzfEtpYlBEsrYX00D8nWnSh44BHQLAHgGAzxE0TRVo1fNjvspDcLJlWL/XVX0="
+  secret_access_key:
+    secure: "D8D0lo+kkBMY60eST5jE1BlPuTn+xuvuVEwRBxfPiVoyFnRZruTfNVpfJi49ZMy0iqdkbLlflkjJQ6ZGGXRLEpBLCM69Ekr4D2ovwinVE6sj24k5klDMCdFBW88D45Hmpex6dKtnsIPdTM76zrQV0EpGDV2jzVOTWp9xeMhrxYRtmItIQzv9dd7RdUy34TdFlm1VMjarJKuySKAy+L4WQMUgQfu1Jfxj3SnD8GCMINFgdU6dWQxnOSLOu72LoO4WWAIE9AZFecp0DTM/2bQ/Dg2HphMoF+ryvUAOmlY98Bolob7BFgNA5bG2xPvfgRVjc5MLNW7A9LGGyGexvV3zK6EYUF50zQB6TgREOFfdoYJyEBGm+ajVlBbafBywXlCOr7KLmVnyuZ7mzK4IPGeY96GTyZtzLBOy+rJYarpIh32S/Qyyw1aE8P396bUFC2MiEw9GZLHQzVGUCWxGdQ8Jklx+vM4Il5D9NVOBbbEe9yvAH1Hl1x7N933pMg+2QEcFAUQz2oRZPXS+PXoOiW1f8z6qEqTJPuDpKGAJLLOwFmHqIlp69A2M56xfRJGEFRlv2X+Lh9H/ys45JPAv5ijZ/Fd5Nc87ZpX2+JgdsDun/cuLRAuGwPrbnMYRQmCofDZp395zbOrd+mdqxYzwRWmkW6l6O0M+WFlv1vftsmPAm9Q="
+  bucket: ipxe-delivery
+  local-dir: delivery
+  upload-dir: archives
+  acl: public_read
+  on:
+    repo: JulienBalestra/ipxe_delivery

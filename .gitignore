@@ -1,0 +1,6 @@
+/make_stdout
+*.tar.gz
+/.idea
+*.usb
+*.o
+*.iso

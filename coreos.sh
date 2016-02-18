@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+set -xe
 
 USB=ipxe.usb
 USB_RULE=bin/${USB}
@@ -42,7 +42,7 @@ function builder
     SCRIPT_PATH="$(pwd)/${SCRIPT_NAME}"
     file ${SCRIPT_PATH}
 
-    git date >> output/sha1
+    date >> output/sha1
     git rev-parse HEAD >> output/sha1
 
     for RULE in ${USB_RULE} ${ISO_RULE}

@@ -38,10 +38,11 @@ function setup_submodules
 
 function builder
 {
-    echo "Starting build_usb..."
+    echo "Starting build..."
     SCRIPT_PATH="$(pwd)/${SCRIPT_NAME}"
     file ${SCRIPT_PATH}
 
+    git date >> output/sha1
     git rev-parse HEAD >> output/sha1
 
     for RULE in ${USB_RULE} ${ISO_RULE}

@@ -42,7 +42,7 @@ function builder
     SCRIPT_PATH="$(pwd)/${SCRIPT_NAME}"
     file ${SCRIPT_PATH}
 
-    git rev-parse HEAD >> delivery/sha1
+    git rev-parse HEAD >> output/sha1
 
     for RULE in ${USB_RULE} ${ISO_RULE}
     do
@@ -56,17 +56,19 @@ function builder
             cat make_stdout
             exit 2
         fi
-        sha1sum  "ipxe/src/${RULE}" >> delivery/sha1
-        mv "ipxe/src/${RULE}" delivery/
+        sha1sum  "ipxe/src/${RULE}" >> output/sha1
+        mv "ipxe/src/${RULE}" output/
     done
 }
 
 function package
 {
     echo "Starting package..."
-    tar -czvf ${PACKAGE} delivery
+    mkdir delivery || rm -Rf delivery/*
+    cd output
+    tar -czvf ${PACKAGE} *
     file ${PACKAGE}
-    mv ${PACKAGE} delivery
+    mv ${PACKAGE} ../delivery/
 }
 
 go_to_dirname

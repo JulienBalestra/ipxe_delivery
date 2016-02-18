@@ -10,6 +10,7 @@ before_install:
 script: "./coreos.sh"
 
 deploy:
+  skip_cleanup: true
   provider: s3
   access_key_id:
     secure: "ZJtQfGX+TiY4x4o391l99mBEtrQcBYkMpBp2SjEPQQ7snpW0oXKDStq3Vunj6ATvljkzj50FuLaHvQ3e/zE7F5d/pR/MdvSGMYBwmQDwqyusl56ztQolUydG1+6GLSWi4qM0LDs+sz4TECFoUZ+yoiYej    +OUgoJyoN9N6j5+GQVcMFyIi3e5VOib0Xkn0tZhaHhpCIZ6eF3EorE6LzIKw+eKSLOA0AD9zTGbgnEZsFOvPvVBZq7q1tNoPIvgaRACwLcSUJ2lneRaFfXOA/UYtHv9UX49HZPUvILsf6qA3wbGFO3zOfuLfaDe2vFrV    RwSuqRMOA02ZVx47KZeCUxIq042ZIeuEn+Hzkdx94QPKhsb7lIL6Zk5viqUUsr29WntRUpTwnHlQ3jP7uwtQkH7QTRalpGfrxhS8dRJNn9wJtAUWcfG1A+9Bv1CN8rZKj3OKzMb7k5oydlCcidPV6QCL8ZixNPR94/Ig    GTehAMZlJXMAgXXLAJ2BPCzAkOr+eayPEnwgJp116r7f2kvHPCWL5Udm1LOFv5DGMIdlA+loMM0RIl9sPeIiq1kdqV0dDgMT888vljaUjf3YKhVCEUGbdPTaOmnWENsui8bnTFV3TNh73vzfEtpYlBEsrYX00D8nWnSh44BHQLAHgGAzxE0TRVo1fNjvspDcLJlWL/XVX0="

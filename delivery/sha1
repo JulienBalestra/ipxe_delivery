@@ -1,1 +1,2 @@
-# sha1sum
+# git rev-parse HEAD
+# sha1sum ...

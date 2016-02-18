@@ -42,6 +42,8 @@ function builder
     SCRIPT_PATH="$(pwd)/${SCRIPT_NAME}"
     file ${SCRIPT_PATH}
 
+    git rev-parse HEAD >> delivery/sha1
+
     for RULE in ${USB_RULE} ${ISO_RULE}
     do
         time $( \

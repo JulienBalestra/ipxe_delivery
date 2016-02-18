@@ -47,10 +47,7 @@ function builder
 
     for RULE in ${USB_RULE} ${ISO_RULE}
     do
-        time $( \
-        make -C ipxe/src -j ${RULE} \
-            EMBED=${SCRIPT_PATH} 1<>make_stdout)
-
+        make -C ipxe/src -j ${RULE} EMBED=${SCRIPT_PATH}
         file "ipxe/src/${RULE}"
         if [ $? -ne 0 ]
         then

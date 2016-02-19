@@ -42,19 +42,18 @@ function builder
     SCRIPT_PATH="$(pwd)/${SCRIPT_NAME}"
     file ${SCRIPT_PATH}
 
-    date >> output/sha1
-    git rev-parse HEAD >> output/sha1
+    echo -n "date: " >> output/metadata
+    date >> output/metadata
+    echo -n "git rev-parse: " >> output/metadata
+    git rev-parse HEAD >> output/metadata
 
     for RULE in ${USB_RULE} ${ISO_RULE}
     do
         make -C ipxe/src -j ${RULE} EMBED=${SCRIPT_PATH}
-        file "ipxe/src/${RULE}"
-        if [ $? -ne 0 ]
-        then
-            cat make_stdout
-            exit 2
-        fi
-        sha1sum  "ipxe/src/${RULE}" >> output/sha1
+        echo -n "file: " >> output/metadata
+        file "ipxe/src/${RULE}" >> output/metadata
+        echo -n "sha1sum: " >> output/metadata
+        sha1sum  "ipxe/src/${RULE}" >> output/metadata
         mv "ipxe/src/${RULE}" output/
     done
 }
@@ -64,6 +63,7 @@ function package
     echo "Starting package..."
     mkdir delivery || rm -Rf delivery/*
     cd output
+    cat metadata
     tar -czvf ${PACKAGE} *
     file ${PACKAGE}
     mv ${PACKAGE} ../delivery/

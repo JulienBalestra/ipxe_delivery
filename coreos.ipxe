@@ -3,6 +3,6 @@
 dhcp
 set cloud-config-url https://raw.githubusercontent.com/JulienBalestra/coreos_deploy/master
 set base-url http://alpha.release.core-os.net/amd64-usr/current
-kernel ${base-url}/coreos_production_pxe.vmlinuz cloud-config-url=${cloud-config-url}/install/get_cloud-config.sh
+kernel ${base-url}/coreos_production_pxe.vmlinuz cloud-config-url=${cloud-config-url}/install/get_cloud-config.sh sshkey="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5iQ37uoDiiwbG+w+HQr+o1kKeanTF5mpM/kIGli6h9mFkB9wdnjMx/CyLxuSK5SVj0xlLlwuGw+ef/g0PLftw1jJrBLNmWVYl2iGGlyZ8CQlTdEUVfzHcE7JEmp8QRABPZTWOYtayYxQmJLMMevsAO/QEM9Xr9nHZ2JvBS57clq0vcfsqQB68HGHk0SWBL9dRUUUSDca+/rTzCZhT+MPslvywCJWYLyV2KCSbVAt90IscDHH3VQ4XRTuKAOBrlL20832b+4Q4H/L0Oa5qt4jKEYb9BFlcjghB0MjGPuP0/XEYY7rGd6aGu56yKsSedBJnlhUqhrWmETqZ+8rr32mP Generated-by-Nova"
 initrd ${base-url}/coreos_production_pxe_image.cpio.gz
 boot

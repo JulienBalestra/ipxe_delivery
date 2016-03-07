@@ -7,7 +7,7 @@ USB_RULE=bin/${USB}
 USB_BIN=ipxe/src/${USB_RULE}
 
 ISO=ipxe.iso
-ISE_RULE=bin/${ISO}
+ISO_RULE=bin/${ISO}
 ISO_BIN=ipxe/src/${ISO_RULE}
 
 SCRIPT_NAME=coreos.ipxe

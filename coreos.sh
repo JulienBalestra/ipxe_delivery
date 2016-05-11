@@ -52,6 +52,7 @@ function builder
         make -C ipxe/src -j ${RULE} EMBED=${SCRIPT_PATH}
         echo -n "file: " >> output/metadata
         file "ipxe/src/${RULE}" >> output/metadata
+	ls -l "ipxe/src/${RULE}"
         echo -n "sha1sum: " >> output/metadata
         sha1sum  "ipxe/src/${RULE}" >> output/metadata
         mv "ipxe/src/${RULE}" output/

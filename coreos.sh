@@ -47,7 +47,7 @@ function builder
     echo -n "git rev-parse: " >> output/metadata
     git rev-parse HEAD >> output/metadata
 
-    for RULE in ${USB_RULE} ${ISO_RULE}
+    for RULE in ${ISO_RULE} ${USB_RULE} 
     do
         make -C ipxe/src -j ${RULE} EMBED=${SCRIPT_PATH}
         echo -n "file: " >> output/metadata

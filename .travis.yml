@@ -5,7 +5,7 @@ sudo: required
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y liblzma-dev mkisofs isolinux
+  - sudo apt-get install -y liblzma-dev mkisofs
 
 script: "./coreos.sh"
 
